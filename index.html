@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WYRAZY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/assets/favicons//favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/assets/favicons//favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/assets/favicons//favicon-160x160.png" sizes="160x160" />
+    <link rel="icon" type="image/png" href="/assets/favicons//favicon-196x196.png" sizes="196x196" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png" />
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+
+    <main class="game">
+
+        <div class="game-layer game-intro container" data-game-intro>
+
+            <header class="intro">
+                <h1 class="main-header intro__header">Wyrazy</h1>
+                <p class="bigger-text intro__text">Cześć! Zapraszam Cię do zagrania w grę WYRAZY.
+                </p>
+            </header>
+
+            <article class="rules">
+                <h2 class="medium-header rules__header" data-rules-header>Poznaj zasady<span class="rules__arrow"
+                        data-rules-arrow></span></h2>
+                <ol class="main-text rules__text" data-rules-text>
+                    <li>Zarówno Ty, jak i przeciwnik, otrzymujecie na stracie po 10 kart. Na środku stołu znajduje się
+                        jedna karta.</li>
+                    <li>Twoim zadaniem jest znalezienie karty zawierającej słowo, które:
+                        <ol type="a">
+                            <li>tryb easy: ma w sobie <strong>przynajmniej jedną literę</strong> taką samą jak słowo na
+                                środku stołu;</li>
+                            <li>tryb difficult: zaczyna się od <strong>pierwszej</strong> lub <strong>ostatniej</strong>
+                                litery słowa na środku stołu.</li>
+                        </ol>
+                        Gdy znajdziesz taką kartę, wyłóż ją na stole na prawo od karty na środku i kliknij przycisk
+                        „Koniec ruchu”. W jednym ruchu możesz wyłożyć na stół <strong>jedną lub kilka</strong> kart
+                        spełniających warunek – w zależności od tego, ile wyłożysz poprawnych kart, tyle punktów
+                        otrzymasz.</li>
+                    <li>Na wykonanie ruchu masz <strong>12 sekund</strong>. Jeśli w tym czasie nie wykonasz żadnego
+                        ruchu, następuje kolejka rywala.</li>
+                    <li>Jeśli na stół wyłożysz błędną kartę / błędne karty, po kliknięciu „Koniec ruchu” wracają one na
+                        Twój stół.</li>
+                    <li>Jeśli w danym ruchu nie możesz spośród swoich kart znaleźć żadnej spełniającej warunek wyłożenia
+                        jej na stół, możesz:
+                        <ol type="a">
+                            <li><strong>Dobrać kartę</strong> – za pomocą przycisku „Dobierz kartę”. Po dobraniu karty
+                                ruch ma rywal.</li>
+                            <li><strong>Wymienić</strong> kartę na środku stołu – za pomocą przycisku „Wymień kartę”. Po
+                                wymienieniu karty wciąż masz ruch (tyle sekund, ile Ci pozostało), możesz więc wyłożyć
+                                kartę na stół, dobrać kartę lub ponownie wymienić kartę.</li>
+                            <li>Przeczekać swoją kolejkę, nie wykonując żądnego ruchu.</li>
+                        </ol>
+                    </li>
+                    <li>W jednej rozgrywce możesz maksymalnie <strong>5 razy</strong> wymienić kartę na środku stołu.
+                    </li>
+                    <li>Rywal wykłada karty na stół według tych samych zasad co Ty w danym trybie gry. Jeśli rywal nie
+                        znajdzie żadnej karty pasującej do karty na środku, za karę otrzymuje jedną dodatkową kartę
+                        (Ciebie to nie dotyczy).</li>
+                    <li>Wygrywa gracz, który <strong>jako pierwszy pozbędzie się wszystkich swoich kart</strong>. W
+                        każdej chwili możesz także przerwać grę za pomocą przycisku „Przerwij grę” – wygrywa wtedy
+                        gracz, który <strong>zgromadził więcej punktów</strong>.</li>
+                    <li>Po zakończeniu gry możesz zagrać ponownie lub wrócić do ekranu startowego (w którym jesteś
+                        teraz).</li>
+                </ol>
+            </article>
+
+            <article class="form">
+                <h2 class="form__header medium-header">Gramy?</h2>
+                <h3 class="bigger-text">Wpisz swoje imię i przejdź dalej.</h3>
+                <div class="form__content" data-form>
+                    <input type="text" placeholder="Twoje imię" class="form__input" data-form-name>
+                    <button class="form__button sylaby__button" data-button data-form-button>Dalej</button>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="game-layer game-modes hidden container" data-game-modes>
+
+            <header class="modesIntro">
+                <h2 class="modesIntro__header medium-header">Wybierz tryb gry:</h2>
+            </header>
+
+            <article class="modesChoose">
+                <div class="modesChoose__mode" data-easy-mode>Easy</div>
+                <div class="modesChoose__mode" data-difficult-mode>Difficult</div>
+            </article>
+
+        </div>
+
+        <div class="game-layer sylaby hidden" data-game-board>
+
+            <header class="sylaby__header">
+                <h1 class="main-header">Wyrazy</h1>
+                <section class="sylaby__buttons">
+                    <button class="sylaby__button" data-button data-button-change>Wymień kartę</button>
+                    <button class="sylaby__button" data-button data-button-hit>Dobierz kartę</button>
+                    <button class="sylaby__button" data-button data-button-stop>Przerwij grę</button>
+                    <p class="sylaby__cardChangesCounter" data-card-changes-counter></p>
+                </section>
+                <section class="sylaby__timer" data-timer>0</section>
+            </header>
+
+            <section class="sylaby__message" data-message></section>
+
+            <section class="sylaby__deck" data-deck></section>
+
+            <section class="sylaby__table" data-table>
+
+                <section class="table__player" data-rival>
+                    <div class="player__info">
+                        <span class="player__name" data-rival-name></span>
+                        <span class="player__output" data-rival-output></span>
+                    </div>
+                    <div class="player__cards" data-rival-cards>
+                    </div>
+                </section>
+
+                <section class="sylaby__wordTable">
+                    <div class="card table__actualCard" data-actual-card></div>
+                    <section class="table__wordsRight" id="target" data-table-right ondrop="drop_handler(event)"
+                        ondragover="dragover_handler(event)"></section>
+                </section>
+
+                <section class="table__player" data-player>
+                    <div class="player__info">
+                        <span class="player__name" data-player-name></span>
+                        <span class="player__output" data-player-output></span>
+                    </div>
+                    <button class="sylaby__button sylaby__button--moveEnd" data-button data-button-moveEnd>Koniec
+                        ruchu</button>
+                    <div class="player__cards" id="target" data-player-cards ondrop="drop_handler(event)"
+                        ondragover="dragover_handler(event)">
+                    </div>
+                </section>
+
+            </section>
+
+        </div>
+
+        <div class="game-layer end-screen hidden" data-end-screen>
+            <div class="end-screen__modal">
+                <h2 class="end-screen__header" data-end-screen-result></h2>
+                <p class="end-screen__points">Twoje punkty: <span data-end-screen-player-points>0</span></p>
+                <p class="end-screen__points">Punkty przeciwnika: <span data-end-screen-rival-points>0</span></p>
+                <div class="end-screen__buttons-wrapper">
+                    <button class="sylaby__button sylaby__button--end" data-button data-restart-level
+                        type="button">Zagraj jeszcze raz</button>
+                    <button class="sylaby__button sylaby__button--end" data-button data-back-to-start type="button">Wróć
+                        do początku</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="app/Game.js" type="module"></script>
+    <script>
+        function dragstart_handler(ev) {
+            ev.dataTransfer.setData("application/my-app", ev.target.id);
+            ev.dataTransfer.effectAllowed = "move";
+        }
+
+        function dragover_handler(ev) {
+            ev.preventDefault();
+            ev.dataTransfer.dropEffect = "move";
+        }
+
+        function drop_handler(ev) {
+            ev.preventDefault();
+            const data = ev.dataTransfer.getData("application/my-app");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</body>
+
+</html>

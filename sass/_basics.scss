@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+:root {
+    scroll-behavior: smooth;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+ol li {
+    margin-bottom: .5rem;
+    ol {
+        list-style-position: inside;
+        li {
+            margin: 0.4rem;            
+        }
+    } 
+}
+.main-header {
+    font-family: 'Permanent Marker';
+    margin: 2rem;
+    font-size: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.medium-header {
+    font-family: 'Permanent Marker';
+    margin: 1.5rem auto 1rem;
+    font-size: 36px;
+    text-align: center;
+}
+.bigger-text {
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+}
+.main-text {
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+}
+.message {
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    color: #fff;
+    border: 5px solid #fff;
+    box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    font-size: 17px;
+    font-weight: 600;
+    &--wordFound {
+        background-color: gold;
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        width: 900px;
+        height: 600px;
+        border: 10px solid #000;
+        p {
+            position: absolute;
+            top: 40%;
+        }
+    }
+}
+.hidden {
+    display: none!important;
+}
+.active {
+    transform: scale(1.1);
+}
+.active-timer {
+    transform-origin: center bottom;
+    animation: shakes .4s linear;
+}
+@media (max-width: 1299px) {
+    .message {
+        &--wordFound {
+            width: 800px;
+            height: 500px;
+        }
+    }    
+}
+@media (max-width: 1100px) {
+    .container {
+        margin: 0 10vw;
+    }
+}
+@media (max-width: 991px) {
+    .main-header {
+        margin: 0 auto 6rem auto;
+    }
+    .message {
+        &--wordFound {
+            width: 700px;
+        }
+    }   
+}
+@media (max-width: 767px) {
+    .message {
+        height: 300px;
+        &--wordFound {
+            width: 600px;
+            height: 500px;
+        }
+    }
+}
+@media (max-width: 575px) {
+    .main-header {
+        font-size: 30px;
+        margin: 0 auto 4rem auto;
+    }
+    .medium-header {
+        font-size: 26px;
+    }
+    .main-text {
+        font-size: 11px;
+        line-height: 22px;
+    }
+    .message {
+        width: 290px;
+        height: 180px;
+        padding: 20px;
+        font-size: 12px;
+        box-sizing: border-box;
+        &--wordFound {
+            width: 450px;
+            height: 350px;
+        }
+    }
+}
+@media (max-width: 480px) {
+    .message {
+        &--wordFound {
+            font-size: 8px;
+            width: 320px;
+            height: 250px;
+        }
+    }
+}

@@ -1,0 +1,50 @@
+.modesIntro {
+    margin-top: 3rem;
+}
+.modesChoose {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5rem;
+    &__mode {
+        box-sizing: border-box;
+        background-color: #000;
+        flex-basis: 40%;
+        height: 200px;
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 200px;
+        font-size: 40px;
+        cursor: pointer;
+        border: 5px solid #000;
+        transition: .3s linear;
+        text-decoration: none;
+        &:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    }
+}
+@media (max-width: 991px) {
+    .modesChoose {
+        justify-content: space-between;
+        margin-top: 4rem;
+        &__mode {
+            font-size: 30px;
+            flex-basis: 45%;
+            height: 170px;
+            line-height: 170px;
+        }
+    }
+}
+@media (max-width: 575px) {
+    .modesChoose {
+        margin-top: 3rem;
+        &__mode {
+            font-size: 20px;
+            flex-basis: 47%;
+            height: 100px;
+            line-height: 100px;
+        }
+    }
+}

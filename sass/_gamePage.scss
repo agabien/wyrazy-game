@@ -1,0 +1,318 @@
+.sylaby {
+    .card {
+        height: 130px;
+        width: 100px;
+        margin: 20px;
+        background-color: #fff;
+        box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.3);
+        font-family: 'Lato';
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 130px;
+        text-align: center;
+        cursor: pointer;
+        transition: .3s;
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+    }
+    &__header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__wordTable {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__table {
+        .table {
+            &__wordsRight {
+                display: flex;
+                flex-grow: 1;
+                justify-content: flex-start;
+                position: relative;
+                align-self: stretch;
+                &::after {
+                    content: 'Tutaj przeciągnij swoje karty.';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: #ddd;
+                    font-size: 26px;
+                    font-weight: 600;
+                    text-align: center;
+                    z-index: -1;
+                }
+            }
+            &__player {
+                position: relative;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                min-height: 200px;
+                background-color: #000;
+                .player {
+                    &__info {
+                        color: #fff;
+                        font-size: 30px;
+                        border-bottom: 2px solid #fff;
+                    }
+                    &__cards {
+                        width: 100%;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                    }
+                }
+            } 
+            &__actualCard {
+                margin-left: 6rem;
+            }           
+        }
+    }
+    &__cardChangesCounter {
+        text-align: center;
+        font-weight: 600;
+        margin-top: 10px;
+    }
+    &__buttons {
+        position: absolute;
+        right: 10%;
+    }
+    &__button {
+        background-color: #000;
+        padding: 10px 20px;
+        margin: 0 .5rem;
+        width: 100px;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-family: 'Lato';
+        font-weight: 600;
+        transition: .3s;
+        &--moveEnd {
+            position: absolute;
+            right: 1%;
+            top: 2%;
+            margin: 0;
+            background-color: #fff;
+            color: #000;
+            width: 130px;
+        }
+        &--end {
+            background-color: #fff;
+            color: #000;
+            width: 130px;
+            margin: 2rem 2rem 0 2rem;
+        }
+    }
+    &__timer {
+        position: absolute;
+        right: 2%;
+        width: 100px;
+        height: 100px;
+        background-image: url(../assets/clock.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        text-align: center;
+        line-height: 115px;
+        color: white;
+        cursor: pointer;
+        transition: .3s;
+        &::hover {
+            animation: rotate 1s linear;
+        }
+    }
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(30deg);
+    }
+    100% {
+        transform: rotate(-30deg);
+    }
+}
+@media (max-width: 1300px) {
+    .sylaby {
+        &__header {
+            justify-content: flex-start;
+        }
+        &__button {
+            margin: 0 1rem;
+            &--end {
+                margin-top: 1rem;
+            }
+        }
+        &__timer {
+            width: 80px;
+            height: 80px;
+            line-height: 95px;
+        }
+        .card {
+            height: 100px;
+            width: 70px;
+            line-height: 100px;
+            font-size: 14px;
+            margin: 10px;
+        }
+    }
+}
+@media (max-width: 991px) {
+    .sylaby {
+        &__header {
+            justify-content: center;
+        }
+        &__cardChangesCounter {
+            font-size: 14px;
+        }
+        &__buttons {
+            position: absolute;
+            right: unset;
+            top: 11%;
+        }
+        &__button {
+            width: 150px;
+            padding: 15px 20px;
+            &--moveEnd {
+                width: 130px;
+                padding: 10px;
+            }
+            &--end {
+                margin-top: 1rem;
+            }
+        }
+        &__timer {            
+            top: 0;
+        }
+        &__table {
+            .table {
+                &__wordsRight {
+                    &::after {
+                        font-size: 20px;
+                    }
+                }
+                &__player {
+                    .player {
+                        &__info {
+                            font-size: 20px;
+                            margin: 10px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 900px) {
+    .sylaby {
+        &__buttons {
+            position: absolute;
+            right: unset;
+            top: 9%;
+        }
+    }
+}
+@media (max-width: 575px) {
+    .sylaby {
+        &__timer {
+            width: 50px;
+            height: 50px;
+            line-height: 60px;
+            font-size: 12px;
+        }
+        &__cardChangesCounter {
+            font-size: 10px;
+            margin-top: 5px;
+        }
+        &__buttons {
+            top: 8%;
+        }
+        &__button {
+            width: 90px;
+            padding: 9px;
+            margin: 0 .2rem;
+            font-size: 10px;
+            &--end {
+                width: 150px;
+                margin: .7rem .5rem 0 .5rem;
+                padding: 11px;
+                font-size: 12px;
+            }
+        }
+        .card {
+            height: 70px;
+            width: 50px;
+            line-height: 70px;
+            font-size: 9px;
+            margin: 7px;
+        }
+        &__table {
+            .table {
+                &__wordsRight {
+                    &::after {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 319px) {
+    .sylaby {
+        &__cardChangesCounter {
+            margin-top: 4px;
+        }
+        &__buttons {
+            top: 7%;
+        }
+    }
+}
+@keyframes shakes {
+   0% {
+    transform: translateX(0) rotate(0deg)
+   }
+   20% {
+    transform: translateX(-5px) rotate(10deg)
+   }
+   40% {
+    transform: translateX(5px) rotate(-10deg)
+   }
+   60% {
+    transform: translateX(-5px) rotate(10deg)
+   }
+   80% {
+    transform: translateX(5px) rotate(-10deg)
+   } 
+   100% {
+    transform: translateX(0) rotate(0deg)
+   }
+}
+@keyframes arrowShakes {
+    0% {
+     transform: translateY(-10%) rotate(-135deg);
+    }
+    25% {
+     transform: translateY(-15%) rotate(-135deg);
+    }
+    50% {
+     transform: translateY(-5%) rotate(-135deg);
+    }
+    75% {
+     transform: translateY(-15%) rotate(-135deg);
+    }
+    100% {
+     transform: translateY(-10%) rotate(-135deg);
+    } 
+}
+
+
+
+
