@@ -1,4 +1,7 @@
 .sylaby {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     .card {
         height: 130px;
         width: 100px;
@@ -29,6 +32,10 @@
         align-items: center;
     }
     &__table {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-grow: 1;
         .table {
             &__wordsRight {
                 display: flex;
@@ -58,6 +65,7 @@
                 align-items: center;
                 min-height: 200px;
                 background-color: #000;
+                width: 100%;
                 .player {
                     &__info {
                         color: #fff;

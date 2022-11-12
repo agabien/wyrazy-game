@@ -134,7 +134,8 @@ class Game extends UI {
         this.rivalName.innerHTML = this.rival.name;
 
         if (!this.media.swapSound) {
-			this.media.swapSound = this.loadSound('../assets/sounds/ding.mp3');
+			// this.media.swapSound = this.loadSound('../assets/sounds/ding.mp3');
+			this.media.swapSound = this.loadSound('https://raw.githubusercontent.com/agabien/wyrazy-game/master/assets/sounds/ding.mp3');
 		}
 
         this.gameStarted = true;
