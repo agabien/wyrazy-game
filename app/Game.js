@@ -172,8 +172,11 @@ class Game extends UI {
             this.table.showCards(this.rivalCards, card2, 'rival');
         }
 
-        this.playerCardsSet = this.getElements(this.UiSelectors.playerCard);
-        this.playerCardsSet.forEach(card => card.addEventListener('dragstart', this.dragstart_handler));
+        this.playerCardsSet = this.playerCards.getElementsByTagName('div');
+
+        for (const card of this.playerCardsSet) {
+            card.addEventListener('dragstart', this.dragstart_handler)
+        }
         
         this.actualizeRivalCardsSet();
 
@@ -256,15 +259,20 @@ class Game extends UI {
             for(let i = 0; i < this.sylabsInUse.length; i++) {
                 this.playerPoints.textContent = this.player.addPoint();
             }             
-
-            this.player.checkIfWin() ? this.endTheGame(true) : this.disableCardsAndButtons(); 
-
+            
+            this.disableCardsAndButtons();
+            
             if(this.sylabsInUse.length > 1) {
                 this.messageBox.setText(`Brawo! Podałeś/aś poprawne karty. Ruch rywala.`).show(true);     
             } else {
                 this.messageBox.setText(`Brawo! Podałeś/aś poprawną kartę. Ruch rywala.`).show(true); 
-            }    
+            }  
+
             this.media.playSwapSound();
+
+            if(this.player.checkIfWin()) {
+                this.endTheGame(true);
+            };
         } else if(cardToRemove && this.sylabsToRemove.length) {
             this.actualCard.value = this.sylabsInUse[this.sylabsInUse.length - 1];
             this.table.changeActualCard(this.sylabsInUse[this.sylabsInUse.length - 1]);            
@@ -276,16 +284,16 @@ class Game extends UI {
             }
             
             this.moveWrongCardsBackToPlayer();
+            this.disableCardsAndButtons();
 
             if(this.player.checkIfWin()) this.endTheGame(true); 
 
             this.messageBox.setText(`Brawo! Podałeś/aś poprawną kartę. Ruch rywala.`).show(true);
             this.media.playSwapSound(); 
-            this.disableCardsAndButtons();
         } else {
             this.moveWrongCardsBackToPlayer();  
-            this.messageBox.setText('Niestety podałeś/aś niepoprawną kartę. Ruch rywala.').show();  
             this.disableCardsAndButtons();       
+            this.messageBox.setText('Niestety podałeś/aś niepoprawną kartę. Ruch rywala.').show();  
         }       
 
         clearTimeout(this.playerMoveTimeout);
@@ -304,7 +312,7 @@ class Game extends UI {
         if(this.gameEnded) {
             return;
         }
-        this.disableCardsAndButtons();
+        // this.disableCardsAndButtons();
 
         clearTimeout(this.playerMoveTimeout);
         this.timer.stopTimer();
@@ -476,8 +484,14 @@ class Game extends UI {
     }
 
     disableCardsAndButtons() {
-        this.playerCardsSet.forEach(card => card.setAttribute('draggable', 'false'));
-        this.playerCardsSet.forEach(card => card.removeAttribute('ondragstart'));
+        for (const card of this.playerCardsSet) {
+            card.setAttribute('draggable', 'false');
+        }    
+
+        for (const card of this.playerCardsSet) {
+            card.removeAttribute('ondragstart');
+        }
+
         this.allButtons.forEach(button => button.disabled = true);
         this.allButtons.forEach(button => button.removeEventListener('mouseover', () => button.classList.add('active'))); 
         this.allButtons.forEach(button => button.removeEventListener('mouseout', () => button.classList.remove('active')));   
@@ -486,8 +500,14 @@ class Game extends UI {
     }
 
     enableCardsAndButtons() {
-        this.playerCardsSet.forEach(card => card.setAttribute('draggable', 'true'));
-        this.playerCardsSet.forEach(card => card.setAttribute('ondragstart', 'dragstart_handler(event)'));
+        for (const card of this.playerCardsSet) {
+            card.setAttribute('draggable', 'true')
+        }
+
+        for (const card of this.playerCardsSet) {
+            card.setAttribute('ondragstart', 'dragstart_handler(event)');
+        }
+
         this.allButtons.forEach(button => button.disabled = false);
         this.allButtons.forEach(button => button.addEventListener('mouseover', () => button.classList.add('active'))); 
         this.allButtons.forEach(button => button.addEventListener('mouseout', () => button.classList.remove('active')));   
