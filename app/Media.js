@@ -14,7 +14,6 @@ export class Media {
 
 	set swapSound(sound) {
 		this._swapSound = sound;
-		this._swapSound.volume = this.soundVolume;
 	}
 
 	get swapSound() {
