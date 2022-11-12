@@ -4,9 +4,6 @@
     }
 }
 .rules {
-    &__header {
-        cursor: pointer;
-    }
     &__text {
         text-align: left;
         color: #fff;
@@ -19,12 +16,13 @@
         border: 5px solid #000;
         border-bottom: 0;
         border-right: 0;
-        height: 20px;
-        width: 20px;
+        height: 15px;
+        width: 15px;
         margin-left: 2rem;
-        transform: translateY(-10%) rotate(-135deg);
+        transform: translateY(-20%) rotate(-135deg);
         display: inline-block;
         position: relative;
+        cursor: pointer;
         transition: transform .2s linear;
         &.hover-arrow {
             animation: arrowShakes 2s linear;

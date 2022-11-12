@@ -93,6 +93,9 @@ class Game extends UI {
     }
 
     handleGameModes() {
+        this.rulesText.classList.remove('active-rules');
+        this.rulesArrow.classList.remove('active-arrow');
+
         this.formInput.value = '';
         this.easyMode.addEventListener('click', e => this.startGame(e));
         this.difficultMode.addEventListener('click', e => this.startGame(e));

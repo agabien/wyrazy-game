@@ -54,7 +54,7 @@
                 margin: 0 auto;
                 display: flex;
                 flex-direction: column;
-                justify-content: space-around;
+                justify-content: space-between;
                 align-items: center;
                 min-height: 200px;
                 background-color: #000;
@@ -80,7 +80,7 @@
     &__cardChangesCounter {
         text-align: center;
         font-weight: 600;
-        margin-top: 10px;
+        margin-top: 1rem;
     }
     &__buttons {
         position: absolute;
@@ -156,6 +156,13 @@
             height: 80px;
             line-height: 95px;
         }
+        &__table {
+            .table {
+                &__player {
+                    min-height: 150px;
+                }
+            }
+        }
         .card {
             height: 100px;
             width: 70px;
@@ -176,7 +183,7 @@
         &__buttons {
             position: absolute;
             right: unset;
-            top: 11%;
+            top: 12%;
         }
         &__button {
             width: 150px;
@@ -211,15 +218,6 @@
         }
     }
 }
-@media (max-width: 900px) {
-    .sylaby {
-        &__buttons {
-            position: absolute;
-            right: unset;
-            top: 9%;
-        }
-    }
-}
 @media (max-width: 575px) {
     .sylaby {
         &__timer {
@@ -230,10 +228,10 @@
         }
         &__cardChangesCounter {
             font-size: 10px;
-            margin-top: 5px;
+            margin-top: 10px;
         }
         &__buttons {
-            top: 8%;
+            top: 9%;
         }
         &__button {
             width: 90px;
@@ -261,6 +259,9 @@
                         font-size: 12px;
                     }
                 }
+                &__player {
+                    min-height: 124px;
+                }
             }
         }
     }
@@ -270,8 +271,8 @@
         &__cardChangesCounter {
             margin-top: 4px;
         }
-        &__buttons {
-            top: 7%;
+        &__button {
+            width: 83px;
         }
     }
 }
